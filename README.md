@@ -1,34 +1,15 @@
 # Stane — Official Website
 
-Monorepo for the Stane cybersecurity product website.
-
-## Stack
-
-- **Frontend**: Next.js 15 (App Router) + TailwindCSS, served from `apps/web`
-- **Backend**: NestJS, served from `apps/api`
-- **Runtime / package manager**: [Bun](https://bun.sh)
-
-## Structure
-
-```
-apps/
-  web/   Next.js marketing site (single home page)
-  api/   NestJS backend (health check + contact endpoint)
-```
+Marketing site for the Stane cybersecurity product, built with Next.js and TailwindCSS.
 
 ## Getting started
 
-Install [Bun](https://bun.sh) first, then:
-
 ```bash
-bun install
-
-# frontend (http://localhost:3000)
-bun run dev:web
-
-# backend (http://localhost:4000)
-bun run dev:api
+npm install
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Design
 
