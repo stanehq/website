@@ -10,6 +10,11 @@
     "dev:api": "bun --cwd apps/api run dev",
     "build:web": "bun --cwd apps/web run build",
     "build:api": "bun --cwd apps/api run build",
-    "lint": "bun --cwd apps/web run lint"
+    "lint": "bun run lint:api && bun run lint:web",
+    "lint:api": "bun --cwd apps/api run lint",
+    "lint:web": "bun --cwd apps/web run lint",
+    "typecheck:api": "bun --cwd apps/api run typecheck",
+    "typecheck:web": "bun --cwd apps/web run typecheck",
+    "typecheck": "bun run typecheck:api && bun run typecheck:web"
   }
 }
