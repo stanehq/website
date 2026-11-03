@@ -1,7 +1,7 @@
 {
   "name": "stane-website",
   "private": true,
-  "packageManager": "bun@1.2.0",
+  "packageManager": "bun@1.4.4",
   "workspaces": [
     "apps/*"
   ],
