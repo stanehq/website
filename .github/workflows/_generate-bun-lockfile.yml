@@ -1,0 +1,35 @@
+name: Generate Bun lockfile
+
+on:
+  push:
+    branches:
+      - chore/runtime-policy-2026-11
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: chore/runtime-policy-2026-11
+          persist-credentials: false
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.4.4
+      - name: Generate lockfile
+        run: |
+          bun install
+          test -s bun.lock
+          sha256sum bun.lock
+          cat bun.lock
+      - name: Upload generated lockfile
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: bun-lock-1-4-4
+          path: bun.lock
+          retention-days: 1
